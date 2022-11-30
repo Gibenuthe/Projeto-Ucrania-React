@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+require('dotenv').config()
+console.log(process.env)
 // const path = __dirname + '/app/views/';
 const app = express();
 
