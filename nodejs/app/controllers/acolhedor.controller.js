@@ -1,7 +1,7 @@
 const db = require("../models");
 const Acolhedor = db.acolhedores;
 
-// Create and Save a new Tutorial
+// Create and Save a new Acolhedor
 exports.create = (req, res) => {
     if (!req.body.pais) {
         res.status(400).send({ message: "Não pode ficar vazio!" });
@@ -9,7 +9,7 @@ exports.create = (req, res) => {
       }
     
       // Cria um acolhedor
-      const tutorial = new Tutorial({
+      const acolhedor = new Acolhedor({
         nome: req.body.nome,
         fone: req.body.fone,
         email: req.body.email,
@@ -20,8 +20,8 @@ exports.create = (req, res) => {
       });
     
       // Salva acolhedor no banco
-      tutorial
-        .save(tutorial)
+      acolhedor
+        .save(acolhedor)
         .then(data => {
           res.send(data);
         })
@@ -39,7 +39,7 @@ exports.findAll = (req, res) => {
     const pais = req.query.pais;
     var condition = pais ? { pais: { $regex: new RegExp(pais), $options: "i" } } : {};
   
-    Tutorial.find(condition)
+    Acolhedor.find(condition)
       .then(data => {
         res.send(data);
         })
@@ -51,11 +51,11 @@ exports.findAll = (req, res) => {
         });
 };
 
-// Find a single Tutorial with an id
+// Find a single Acolhedor with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Tutorial.findById(id)
+    Acolhedor.findById(id)
       .then(data => {
         if (!data)
           res.status(404).send({ message: "Não encontrou acolhedor com id: " + id });
@@ -68,7 +68,7 @@ exports.findOne = (req, res) => {
       });
 };
 
-// Update a Tutorial by the id in the request
+// Update a Acolhedor by the id in the request
 exports.update = (req, res) => {
     if (!req.body) {
         return res.status(400).send({
@@ -78,7 +78,7 @@ exports.update = (req, res) => {
     
       const id = req.params.id;
     
-      Tutorial.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+      Acolhedor.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
           if (!data) {
             res.status(404).send({
@@ -93,11 +93,11 @@ exports.update = (req, res) => {
         });
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a Acolhedor with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
   
-    Tutorial.findByIdAndRemove(id, { useFindAndModify: false })
+    Acolhedor.findByIdAndRemove(id, { useFindAndModify: false })
       .then(data => {
         if (!data) {
           res.status(404).send({
@@ -118,7 +118,7 @@ exports.delete = (req, res) => {
   
   // Deleta todos acolhedores do banco.
   exports.deleteAll = (req, res) => {
-    Tutorial.deleteMany({})
+    Acolhedor.deleteMany({})
       .then(data => {
         res.send({
           message: `${data.deletedCount} Acolhedores deletados com sucesso!`
@@ -134,7 +134,7 @@ exports.delete = (req, res) => {
   
   // Encontrar todos os acolhedores
   exports.findAllPublished = (req, res) => {
-    Tutorial.find({ published: true })
+    Acolhedor.find({ published: true })
       .then(data => {
         res.send(data);
       })
