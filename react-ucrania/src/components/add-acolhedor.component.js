@@ -4,8 +4,13 @@ import AcolhedorDataService from "../services/acolhedor.service";
 export default class AddAcolhedor extends Component {
   constructor(props) {
     super(props);
-    this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeNome = this.onChangeNome.bind(this);
+    this.onChangeFone = this.onChangeFone.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePais = this.onChangePais.bind(this);
+    this.onChangePessoas = this.onChangePessoas.bind(this);
+    this.onChangeAnimais = this.onChangeAnimais.bind(this);
+    this.onChangeIdiomas = this.onChangeIdiomas.bind(this);
     this.saveAcolhedor = this.saveAcolhedor.bind(this);
     this.newAcolhedor = this.newAcolhedor.bind(this);
 
