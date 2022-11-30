@@ -1,5 +1,5 @@
 module.exports = mongoose => {
-    const Acolhedor = mongoose.model(
+    var Acolhedor = mongoose.model(
       "acolhedor",
       mongoose.Schema(
         {
@@ -15,5 +15,7 @@ module.exports = mongoose => {
       )
     );
   
+
+    
     return Acolhedor;
   };
