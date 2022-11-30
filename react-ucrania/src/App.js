@@ -1,14 +1,20 @@
 import React, { Component } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import AddAcolhedor from "./components/add-acolhedor.component";
+import Acolhedor from "./components/acolhedor.component";
+import AcolhedoresList from "./components/acolhedores-list.component";
 
 class App extends Component {
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <a href="/acolhedores" className="navbar-brand">
+          <Link to={"/acolhedores"} className="navbar-brand">
             Projeto Ucrania
-          </a>
+          </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/acolhedores"} className="nav-link">
@@ -17,7 +23,7 @@ class App extends Component {
             </li>
             <li className="nav-item">
               <Link to={"/add"} className="nav-link">
-                Adicionar
+                Add
               </Link>
             </li>
           </div>
