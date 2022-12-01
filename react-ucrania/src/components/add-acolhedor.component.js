@@ -122,9 +122,9 @@ export default class AddAcolhedor extends Component {
       <div className="submit-form">
         {this.state.submitted ? (
           <div>
-            <h4>You submitted successfully!</h4>
+            <h4>Acolhedor adicionado com sucesso!</h4>
             <button className="btn btn-success" onClick={this.newAcolhedor}>
-              Add
+              Adicionar
             </button>
           </div>
         ) : (
@@ -174,6 +174,7 @@ export default class AddAcolhedor extends Component {
                 type="number"
                 className="form-control"
                 id="pessoas"
+                min="1"
                 required
                 value={this.state.pessoas}
                 onChange={this.onChangePessoas}
@@ -182,7 +183,7 @@ export default class AddAcolhedor extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="pais">Pais</label>
+              <label htmlFor="pais">País</label>
               <select
                 type="text"
                 className="form-control"
@@ -546,6 +547,7 @@ export default class AddAcolhedor extends Component {
                 type="text"
                 className="form-control"
                 id="idiomas"
+                placeholder=""
                 required
                 value={this.state.idiomas}
                 onChange={this.onChangeIdiomas}
@@ -567,7 +569,7 @@ export default class AddAcolhedor extends Component {
             </div>
 
             <button onClick={this.saveAcolhedor} className="btn btn-success">
-              Submit
+              Adicionar
             </button>
           </div>
         )}

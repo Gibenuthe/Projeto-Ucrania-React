@@ -109,7 +109,7 @@ export default class AcolhedoresList extends Component {
                 type="button"
                 onClick={this.searchCountry}
               >
-                Search
+                Procurar
               </button>
             </div>
           </div>
@@ -186,18 +186,11 @@ export default class AcolhedoresList extends Component {
                 </label>{" "}
                 {currentAcolhedor.idiomas}
               </div>
-              {/* <div>
-                <label>
-                  <strong>Status:</strong>
-                </label>{" "}
-                {currentAcolhedor.published ? "Published" : "Pending"}
-              </div> */}
-
               <Link
                 to={"/acolhedores/" + currentAcolhedor.id}
                 className="badge badge-warning"
               >
-                Edit
+                Editar
               </Link>
             </div>
           ) : (

@@ -1,7 +1,5 @@
 module.exports = mongoose => {
-    var Acolhedor = mongoose.model(
-      "acolhedor",
-      mongoose.Schema(
+    var schema = mongoose.Schema(
         {
             nome: { type: String, required: true },
             fone: { type: String, required: false, default: "00000000" },
@@ -12,10 +10,15 @@ module.exports = mongoose => {
             idiomas: { type: String, required: true}
           },
           { timestamps: true }
-      )
-    );
+      );
   
-
+    schema.method("toJSON", function() {
+      const { __v, _id, ...object } = this.toObject();
+      object.id = _id;
+      return object;
+    });
+  
+    const Acolhedor = mongoose.model("acolhedor", schema);
     
     return Acolhedor;
   };
