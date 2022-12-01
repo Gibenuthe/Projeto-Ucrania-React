@@ -13,7 +13,16 @@ export default class AcolhedoresList extends Component {
     this.searchCountry = this.searchCountry.bind(this);
 
     this.state = {
-      acolhedores: [],
+      acolhedores: [{
+        id: 1,
+        nome: "po",
+        fone: "adsad",
+        email: "asda",
+        pais: "Brasil",
+        pessoas: 1,
+        animais: false,
+        idiomas: "adssa",
+      }],
       currentAcolhedor: null,
       currentIndex: -1,
       searchCountry: ""
@@ -188,7 +197,7 @@ export default class AcolhedoresList extends Component {
               </div>
               <Link
                 to={"/acolhedores/" + currentAcolhedor.id}
-                className="badge badge-warning"
+                className="btn btn-primary"
               >
                 Editar
               </Link>

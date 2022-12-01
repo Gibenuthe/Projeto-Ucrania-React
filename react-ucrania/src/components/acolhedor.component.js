@@ -209,7 +209,7 @@ class Acolhedor extends Component {
                   className="form-control"
                   id="nome"
                   required
-                  value={this.state.nome}
+                  value={currentAcolhedor.nome}
                   onChange={this.onChangeNome}
                   name="nome"
                 />
@@ -222,7 +222,7 @@ class Acolhedor extends Component {
                   className="form-control"
                   id="fone"
                   required
-                  value={this.state.fone}
+                  value={currentAcolhedor.fone}
                   onChange={this.onChangeFone}
                   name="fone"
                 />
@@ -235,7 +235,7 @@ class Acolhedor extends Component {
                   className="form-control"
                   id="email"
                   required
-                  value={this.state.email}
+                  value={currentAcolhedor.email}
                   onChange={this.onChangeEmail}
                   name="email"
                 />
@@ -247,21 +247,22 @@ class Acolhedor extends Component {
                   type="number"
                   className="form-control"
                   id="pessoas"
+                  min="1"
                   required
-                  value={this.state.pessoas}
+                  value={currentAcolhedor.pessoas}
                   onChange={this.onChangePessoas}
                   name="pessoas"
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="pais">Pais</label>
+                <label htmlFor="pais">País</label>
                 <select
                   type="text"
                   className="form-control"
                   id="pais"
                   required
-                  value={this.state.pais}
+                  value={currentAcolhedor.pais}
                   onChange={this.onChangePais}
                   name="pais"
                 >
@@ -604,7 +605,7 @@ class Acolhedor extends Component {
                   className="form-control"
                   id="animais"
                   required
-                  value={this.state.animais}
+                  value={currentAcolhedor.animais}
                   onChange={this.onChangeAnimais}
                   name="animais"
                 >
@@ -619,8 +620,9 @@ class Acolhedor extends Component {
                   type="text"
                   className="form-control"
                   id="idiomas"
+                  placeholder=""
                   required
-                  value={this.state.idiomas}
+                  value={currentAcolhedor.idiomas}
                   onChange={this.onChangeIdiomas}
                   name="idiomas"
                 >
@@ -641,7 +643,7 @@ class Acolhedor extends Component {
             </form>
 
             <button
-              className="badge badge-danger mr-2"
+              className="btn btn-danger mr-2"
               onClick={this.deleteAcolhedor}
             >
               Deletar
@@ -649,7 +651,7 @@ class Acolhedor extends Component {
 
             <button
               type="submit"
-              className="badge badge-success"
+              className="btn btn-success"
               onClick={this.updateAcolhedor}
             >
               Atualizar

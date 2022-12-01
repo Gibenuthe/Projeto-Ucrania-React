@@ -10,7 +10,7 @@ import AcolhedoresList from "./components/acolhedores-list.component";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div class="fundo">
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/acolhedores"} className="navbar-brand">
             Projeto Ucrania
