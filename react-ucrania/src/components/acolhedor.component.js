@@ -36,6 +36,19 @@ class Acolhedor extends Component {
     this.getAcolhedor(this.props.router.params.id);
   }
 
+  getAcolhedor(id) {
+    AcolhedorDataService.get(id)
+      .then((response) => {
+        this.setState({
+          currentAcolhedor: response.data,
+        });
+        console.log(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+
   onChangeNome(e) {
     const nome = e.target.value;
 
@@ -125,19 +138,6 @@ class Acolhedor extends Component {
         },
       };
     });
-  }
-
-  getAcolhedor(id) {
-    AcolhedorDataService.get(id)
-      .then((response) => {
-        this.setState({
-          currentAcolhedor: response.data,
-        });
-        console.log(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
   }
 
   updatePublished(status) {
