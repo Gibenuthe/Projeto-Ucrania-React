@@ -266,13 +266,7 @@ class Acolhedor extends Component {
                   onChange={this.onChangePais}
                   name="pais"
                 >
-                  <option
-                    value="0"
-                    label="Selecione um país ... "
-                    selected="selected"
-                  >
-                    Selecione um país ...
-                  </option>
+                  <option value="" disabled selected>Selecione um país...</option>
                   <optgroup id="country-optgroup-Asia" label="Asia">
                     <option value="Afeganistão" label="Afeganistao">
                       Afeganistao
@@ -626,6 +620,7 @@ class Acolhedor extends Component {
                   onChange={this.onChangeIdiomas}
                   name="idiomas"
                 >
+                  <option value="" disabled selected>Escolha um idioma</option>
                   <option value="Alemão">Alemão</option>
                   <option value="Árabe">Árabe</option>
                   <option value="Espanhol">Espanhol</option>
