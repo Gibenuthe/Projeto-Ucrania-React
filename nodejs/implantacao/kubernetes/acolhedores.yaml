@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: acolhedores
+
+spec:
+    containers:
+    - name: acolhedores
+    image: pitucho36/acolhedores:v1.0.0
+    resources:
+        limits:
+            memory: 256Mi
+            cpu: '1'
+

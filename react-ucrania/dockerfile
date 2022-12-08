@@ -1,5 +1,5 @@
 #alpine: imagem Linux "pequena"
-FROM node:14
+FROM node:alpine
 
  # um diretório no sistema de arquivos do contêiner para os
 
@@ -8,7 +8,7 @@ WORKDIR /app
  #copia o arquivo package.json para poder executar npm
 
 COPY package.json .
-#COPY package-lock.json .
+COPY package-lock.json .
  #instala as dependências
 RUN npm install
 
@@ -16,5 +16,4 @@ RUN npm install
 COPY . .
 
  #executa quando o contêiner entrar em execução
-CMD ["node", "server.js"]
-#a6cb83658b9e4b83656d8bfbce47a5a23fd9434dea4403aed52bc1dae87851a7 
+CMD ["npm", "start"]
