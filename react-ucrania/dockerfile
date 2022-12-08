@@ -1,6 +1,9 @@
 #alpine: imagem Linux "pequena"
 FROM node:14
 
+# Create an application directory
+RUN mkdir -p /app
+
  # um diretório no sistema de arquivos do contêiner para os
 
 WORKDIR /app
@@ -18,4 +21,4 @@ COPY . .
 # EXPOSE 8080
 
  #executa quando o contêiner entrar em execução
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
