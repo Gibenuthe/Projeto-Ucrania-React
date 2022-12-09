@@ -11,7 +11,6 @@ WORKDIR /app
  #copia o arquivo package.json para poder executar npm
 
 COPY package.json .
-
  #instala as dependências
 RUN npm install
 
