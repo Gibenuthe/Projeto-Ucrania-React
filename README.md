@@ -22,7 +22,7 @@ A plataforma visa o cadastro de acolhedores em um banco de dados para que ucrani
 O projeto é desenvolvido com a estrutura MERN (MongoDB, Express, React e NodeJs) onde usamos React para o front-end e requisições Axios através do framework Express que se comunicam com um back-end em JavaScript conectado a um banco de dados em nuvem MongoDB.
 
 ## Vídeo Explicação
-[Vídeo Explicativo (Youtube)]()
+[Vídeo Explicativo (Youtube)](https://youtu.be/kjI1FGrT8u8)
 ## Fotos do Site
 ![projeto-ucrania-react-1](https://user-images.githubusercontent.com/79452579/206589582-8ee5c808-da6f-45b9-8a7e-34a6ea2fc94b.png)
 ![projeto-ucrania-react-2](https://user-images.githubusercontent.com/79452579/206589587-06c62448-2183-45f7-9476-d4096680e349.png)
